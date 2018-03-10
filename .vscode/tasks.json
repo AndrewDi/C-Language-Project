@@ -4,23 +4,29 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "build c",
             "type": "shell",
             "command": "gcc",
             "args": [
-                "-g","${file}","-o","${workspaceRoot}\\${fileBasenameNoExtension}.exe"
+                "-g",
+                "${file}",
+                "-o",
+                "${workspaceRoot}\\bin\\${fileBasenameNoExtension}.exe"
             ],
             "group": "build",
             "presentation": {
                 // Reveal the output only if unrecognized errors occur.
-                "reveal": "always",
+                "reveal": "silent",
                 //"panel": "shared",
                 "focus": true
             },
             // Use the standard MS compiler pattern to detect errors, warnings and infos
             "problemMatcher": {
                 "owner": "c",
-                "fileLocation": ["relative", "${workspaceRoot}"],
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
                 "pattern": {
                     "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
                     "file": 1,
@@ -30,12 +36,58 @@
                     "message": 5
                 }
             }
-        },{
+        },
+        {
+            "label": "build cpp",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-std=c++11",
+                "${file}",
+                "-o",
+                "${workspaceRoot}\\bin\\${fileBasenameNoExtension}.exe"
+            ],
+            "group": "build",
+            "presentation": {
+                // Reveal the output only if unrecognized errors occur.
+                "reveal": "silent",
+                //"panel": "shared",
+                "focus": true
+            },
+            // Use the standard MS compiler pattern to detect errors, warnings and infos
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
             "label": "clean",
             "type": "shell",
             "command": "rm",
             "args": [
-               "-Force","${workspaceRoot}\\${fileBasenameNoExtension}.exe"
+                "-Force",
+                "${workspaceRoot}\\bin\\${fileBasenameNoExtension}.exe"
+            ]
+        },
+        {
+            "label": "clean all",
+            "type": "shell",
+            "command": "rm",
+            "args": [
+                "-Force",
+                "${workspaceRoot}\\bin\\*.exe"
             ]
         }
     ]

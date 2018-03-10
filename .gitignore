@@ -1,0 +1,3 @@
+#Remove temp exe file
+/*.exe
+/bin/*.exe
