@@ -13,7 +13,7 @@ void BubbleSort1(int array[], int n)
         for (int j = i + 1; j < n-1; j++)  
         {  
             if (array[i]>array[j])  
-                swap(array, j, i);//æ¯æ¬¡iåé¢çš„å…ƒç´ æ¯”array[i]å°å°±äº¤æ¢ã€‚  
+                swap(array, j, i);//æ¯æ¬¡iåé¢çš„å…ƒç´ æ¯”array[i]å°å°±äº¤æ¢ã€?  
         }  
     }  
 }  
@@ -23,7 +23,7 @@ void BubbleSort2(int array[], int n)
     {  
         for (int j = n - 1; j >= i;j--)  
         {  
-            if (array[j - 1]>array[j])//ä»åé¢åˆ°iä¸ªå…ƒç´ ä¸¤ä¸¤æ¯”è¾ƒï¼ŒæŠŠå°çš„ä¸æ–­ä¸Šé¡¶  
+            if (array[j - 1]>array[j])//ä»åé¢åˆ°iä¸ªå…ƒç´ ä¸¤ä¸¤æ¯”è¾ƒï¼ŒæŠŠå°çš„ä¸æ–­ä¸Šé¡?  
                 swap(array, j, j - 1);  
         }  
     }  
@@ -31,20 +31,20 @@ void BubbleSort2(int array[], int n)
 int main()  
 {  
     int arr[13];  
-    cout << "è¯·è¾“å…¥è¦æ’åºçš„å…ƒç´ ï¼š" << endl;  
+    cout << "ÇëÊäÈëÒªÅÅĞòµÄÔªËØ£º" << endl;  
     for (int i = 0; i < 13; i++)  
     {  
         cin >> arr[i];  
     }  
-    //cout << "æ’åºå‰çš„æ— åºæ•°ç»„å…ƒç´ " << arr[i] << endl;  
+    //cout << "ÅÅĞòÇ°µÄÎŞĞòÊı×éÔªËØ" << arr[i] << endl;  
     BubbleSort1(arr, 13);  
-    cout << "æ’åºåçš„æ•°ç»„å…ƒç´ " << endl;  
+    cout << "ÅÅĞòÇ°µÄÎŞĞòÊı×éÔªËØ" << endl;  
     for (int i = 0; i < 13; i++)  
     {  
         cout << arr[i] << endl;  
     }  
     BubbleSort2(arr, 13);  
-    cout << "æ’åºåçš„æ•°ç»„å…ƒç´ " << endl;  
+    cout << "ÅÅĞòºóµÄÊı×éÔªËØ" << endl;  
     for (int i = 0; i < 13; i++)  
     {  
         cout << arr[i] << endl;  
