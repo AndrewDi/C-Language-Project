@@ -1,3 +1,4 @@
 #Remove temp exe file
 /*.exe
-/bin/*.exe
+/bin/*
+!/bin/README.md

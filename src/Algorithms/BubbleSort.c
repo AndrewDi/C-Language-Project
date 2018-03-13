@@ -48,6 +48,6 @@ void TestBubbleSort(void (*BubbleSort)(int *arr,int sz)){
 int main(){
     TestBubbleSort(BubbleSort1);
     TestBubbleSort(BubbleSort2);
-    system("pause");
+    //system("pause");
     return 0;
 }

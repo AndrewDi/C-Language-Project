@@ -7,12 +7,22 @@
             "label": "build c",
             "type": "shell",
             "command": "gcc",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${workspaceRoot}\\bin\\${fileBasenameNoExtension}.exe"
-            ],
+            "osx": {
+                "args": [
+                    "-g",
+                    "${file}",
+                    "-o",
+                    "${workspaceRoot}/bin/${fileBasenameNoExtension}"
+                ]
+            },
+            "windows": {
+                "args": [
+                    "-g",
+                    "${file}",
+                    "-o",
+                    "${workspaceRoot}/bin/${fileBasenameNoExtension}.exe"
+                ]
+            },
             "group": "build",
             "presentation": {
                 // Reveal the output only if unrecognized errors occur.
@@ -41,13 +51,24 @@
             "label": "build cpp",
             "type": "shell",
             "command": "g++",
-            "args": [
-                "-g",
-                "-std=c++11",
-                "${file}",
-                "-o",
-                "${workspaceRoot}\\bin\\${fileBasenameNoExtension}.exe"
-            ],
+            "windows": {
+                "args": [
+                    "-g",
+                    "-std=c++11",
+                    "${file}",
+                    "-o",
+                    "${workspaceRoot}/bin/${fileBasenameNoExtension}.exe"
+                ]
+            },
+            "osx": {
+                "args": [
+                    "-g",
+                    "-std=c++11",
+                    "${file}",
+                    "-o",
+                    "${workspaceRoot}/bin/${fileBasenameNoExtension}"
+                ]
+            },
             "group": "build",
             "presentation": {
                 // Reveal the output only if unrecognized errors occur.

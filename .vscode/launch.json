@@ -8,14 +8,23 @@
             "name": "(gdb) Launch C",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}\\bin\\${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
+            "program": "${workspaceRoot}\\bin\\${fileBasenameNoExtension}.exe",
             "environment": [],
-            "externalConsole": true,
-            "MIMode": "gdb",
-            "miDebuggerPath": "gdb.exe",
+            "windows": {
+                "program": "${workspaceRoot}\\bin\\${fileBasenameNoExtension}.exe",
+                "MIMode": "gdb",
+                "miDebuggerPath": "gdb.exe",
+                "externalConsole": true
+            },
+            "osx": {
+                "program": "${workspaceRoot}\\bin\\${fileBasenameNoExtension}",
+                "MIMode": "lldb",
+                //"miDebuggerPath": "/usr/bin/lldb",
+                "externalConsole": false
+            },
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
